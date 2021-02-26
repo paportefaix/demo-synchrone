@@ -1,182 +1,42 @@
 # Appel asynchrone
 
-## Resultats
+## Benchmark
 
-curl --location --request GET 'http://localhost:8080/projects-sync'
+Bench fait en ligne de comande à l'aide de la commande suviante au deuxième lancement afin de faire chauffer la JVM:
+ab -c 100 -n 10000 http://localhost:8080/projects-sync
 
-[
-    {
-        "id": 1,
-        "name": "Awsome Project",
-        "clientName": "Rue d'ici",
-        "clientAdresse": "Rue d'ici",
-        "agents": [
-            {
-                "id": 1,
-                "name": "Name 1",
-                "surname": "Surname 1"
-            },
-            {
-                "id": 2,
-                "name": "Name 2",
-                "surname": "Surname 2"
-            },
-            {
-                "id": 3,
-                "name": "Name 3",
-                "surname": "Surname 3"
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "name": "IA Project",
-        "clientName": "Rue de là bas",
-        "clientAdresse": "Rue de là bas",
-        "agents": [
-            {
-                "id": 4,
-                "name": "Name 4",
-                "surname": "Surname 4"
-            },
-            {
-                "id": 5,
-                "name": "Name 5",
-                "surname": "Surname 5"
-            },
-            {
-                "id": 6,
-                "name": "Name 6",
-                "surname": "Surname 6"
-            }
-        ]
-    },
-    {
-        "id": 3,
-        "name": "Project Mahanttan",
-        "clientName": "Avenue du code",
-        "clientAdresse": "Avenue du code",
-        "agents": [
-            {
-                "id": 1,
-                "name": "Name 1",
-                "surname": "Surname 1"
-            },
-            {
-                "id": 3,
-                "name": "Name 3",
-                "surname": "Surname 3"
-            }
-        ]
-    },
-    {
-        "id": 4,
-        "name": "Hyperloop",
-        "clientName": "Rue d'ici",
-        "clientAdresse": "Rue d'ici",
-        "agents": [
-            {
-                "id": 7,
-                "name": "Name 7",
-                "surname": "Surname 7"
-            }
-        ]
-    },
-    {
-        "id": 5,
-        "name": "Electric bike",
-        "clientName": "Impasse de la loose",
-        "clientAdresse": "Impasse de la loose",
-        "agents": [
-            {
-                "id": 2,
-                "name": "Name 2",
-                "surname": "Surname 2"
-            },
-            {
-                "id": 5,
-                "name": "Name 5",
-                "surname": "Surname 5"
-            },
-            {
-                "id": 8,
-                "name": "Name 8",
-                "surname": "Surname 8"
-            }
-        ]
-    },
-    {
-        "id": 6,
-        "name": "Natural air",
-        "clientName": "Avenue du code",
-        "clientAdresse": "Avenue du code",
-        "agents": [
-            {
-                "id": 2,
-                "name": "Name 2",
-                "surname": "Surname 2"
-            },
-            {
-                "id": 7,
-                "name": "Name 7",
-                "surname": "Surname 7"
-            }
-        ]
-    },
-    {
-        "id": 7,
-        "name": "Mama kitchen",
-        "clientName": "Rue du code",
-        "clientAdresse": "Rue du code",
-        "agents": [
-            {
-                "id": 1,
-                "name": "Name 1",
-                "surname": "Surname 1"
-            },
-            {
-                "id": 6,
-                "name": "Name 6",
-                "surname": "Surname 6"
-            }
-        ]
-    },
-    {
-        "id": 8,
-        "name": "Crappy Project",
-        "clientName": "Rue d'ici",
-        "clientAdresse": "Rue d'ici",
-        "agents": [
-            {
-                "id": 1,
-                "name": "Name 1",
-                "surname": "Surname 1"
-            },
-            {
-                "id": 2,
-                "name": "Name 2",
-                "surname": "Surname 2"
-            },
-            {
-                "id": 3,
-                "name": "Name 3",
-                "surname": "Surname 3"
-            },
-            {
-                "id": 4,
-                "name": "Name 4",
-                "surname": "Surname 4"
-            },
-            {
-                "id": 5,
-                "name": "Name 5",
-                "surname": "Surname 5"
-            },
-            {
-                "id": 6,
-                "name": "Name 6",
-                "surname": "Surname 6"
-            }
-        ]
-    }
-]
+Server Software:
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /projects-sync
+Document Length:        1853 bytes
+
+Concurrency Level:      100
+Time taken for tests:   30.310 seconds
+Complete requests:      10000
+Failed requests:        0
+Total transferred:      19580000 bytes
+HTML transferred:       18530000 bytes
+Requests per second:    329.93 [#/sec] (mean)
+Time per request:       303.096 [ms] (mean)
+Time per request:       3.031 [ms] (mean, across all concurrent requests)
+Transfer rate:          630.86 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.6      0       6
+Processing:   300  302   1.2    301     312
+Waiting:      300  301   1.0    301     311
+Total:        301  302   1.5    302     315
+
+Percentage of the requests served within a certain time (ms)
+  50%    302
+  66%    302
+  75%    302
+  80%    303
+  90%    304
+  95%    305
+  98%    307
+  99%    309
+ 100%    315 (longest request)
