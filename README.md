@@ -1,4 +1,4 @@
-# Appel asynchrone
+# Appel synchrone
 
 ## Benchmark
 
