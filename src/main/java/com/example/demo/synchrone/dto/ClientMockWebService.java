@@ -18,7 +18,7 @@ public class ClientMockWebService {
 
     @SneakyThrows
     public List<ClientDto> findAllIn(final List<Integer> ids) {
-        Thread.sleep(100);
+        Thread.sleep(150);
         return clients.stream().filter(clientDto -> ids.contains(clientDto.getId())).collect(Collectors.toList());
     }
 }
